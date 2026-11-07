@@ -52,7 +52,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'BLE Hardware Bidding Paddle GATT + Sub-100ms WebRTC Audio'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    val fallbackPeripheral = "BLE Hardware Bidding Paddle GATT + Sub-100ms WebRTC Audio"
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: fallbackPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "BLE Hardware Bidding Paddle GATT + Sub-100ms WebRTC Audio: ONLINE | READY", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
